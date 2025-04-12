@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mirko Bonomi | Resume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --text-color: #333;
+      --light-gray: #f5f5f5;
+      --border-color: #ddd;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: #fff;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .contact-info a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .contact-info a:hover {
+      color: var(--primary-color);
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--primary-color);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .job {
+      margin-bottom: 1.5rem;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .job-title {
+      font-weight: bold;
+    }
+
+    .job-company {
+      font-weight: bold;
+    }
+
+    .job-date {
+      color: var(--primary-color);
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 1.5rem;
+    }
+
+    ul li {
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+
+    ul li::before {
+      content: "•";
+      color: var(--secondary-color);
+      position: absolute;
+      left: -1rem;
+    }
+
+    .nested-list {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .nested-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .education-item {
+      margin-bottom: 1rem;
+    }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.25rem;
+      flex-wrap: wrap;
+    }
+
+    .edu-institution {
+      font-weight: bold;
+    }
+
+    .edu-location {
+      color: var(--primary-color);
+    }
+
+    .edu-degree {
+      margin-bottom: 0.25rem;
+    }
+
+    .edu-date {
+      color: var(--primary-color);
+    }
+
+    .skills li {
+      display: inline-block;
+      background-color: var(--light-gray);
+      padding: 0.25rem 0.75rem;
+      margin: 0.25rem;
+      border-radius: 3px;
+    }
+
+    .skills li::before {
+      content: none;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      .job-header,
+      .edu-header {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mirko Bonomi</h1>
+    <p>Verona, Italy</p>
+    <div class="contact-info">
+      <a href="tel:+393454555221"><i class="fas fa-phone"></i> +39 345 455 5221</a>
+      <a href="https://www.linkedin.com/in/mgbon/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="mailto:mirko.bonomi@proton.me"><i class="fas fa-envelope"></i> mirko.bonomi@proton.me</a>
+      <a href="https://github.com/mbonum"><i class="fab fa-github-square"></i> GitHub</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="experience">
+      <h2>WORK EXPERIENCE</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Full-stack Developer</span>
+          <span class="job-company">Calzedonia Group S.p.A. (now Oniverse), Verona</span>
+          <span class="job-date">10/2023-present</span>
+        </div>
+        <ul>
+          <li>Designed and implemented innovative solutions with the Innovation Lab to streamline processes and enhance
+            e-commerce experiences.</li>
+          <li>Key projects:
+            <ul class="nested-list">
+              <li>Developed an AI assistant with support, creative, and coding agents to enhance documentation, image
+                generation, and developer productivity. APIs: Gemini, OpenAI, Claude.</li>
+              <li>Automated QA testing for e-commerce using a headless browser to simulate user interactions. Tools:
+                Playwright, Python.</li>
+              <li>Built a Salesforce web app to manage SF Commerce Cloud jobs via OCAPI, eliminating the need for
+                Business Manager access. Tools: JavaScript, HTML, Bootstrap.</li>
+              <li>Created 3D garment and fabric renderings for e-commerce. Tools: CLO3D, Blender, SketchFab, ThreeJS,
+                React.</li>
+            </ul>
+          </li>
+          <li>Tech stack: Python, JavaScript/TypeScript, SCSS, TailwindCSS, Angular, React, Django, GCP, Jira,
+            Confluence, Git.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Software analyst</span>
+          <span class="job-company">Futura Sistemi S.r.l., Verona</span>
+          <span class="job-date">03/2023-09/2023</span>
+        </div>
+        <ul>
+          <li>Translated customers' needs to new software features for the development teams.</li>
+          <li>Solved various problems customers had using the company's software solutions.</li>
+          <li>Designed and developed websites satisfying the needs of the customers mainly using Figma and Wordpress.
+          </li>
+          <li>Organized marketing events to show software demos to potential customers.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Web developer</span>
+          <span class="job-company">RAILware (former division of Ciesse S.p.A.), Verona</span>
+          <span class="job-date">02/2017-06/2017</span>
+        </div>
+        <ul>
+          <li>Developed a web platform that allows customers to configure remotely parameters of Ciesse's railway energy
+            meters EcoS®.</li>
+          <li>Programmed in PHP, JavaScript (jQuery), AJAX, HTML, CSS, and SQL.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>EDUCATION</h2>
+
+      <div class="education-item">
+        <div class="edu-header">
+          <span class="edu-institution">University of Gothenburg, School of Business, Economics, and Law</span>
+          <span class="edu-location">Sweden</span>
+        </div>
+        <div class="edu-degree">Master of Science in Knowledge-based Entrepreneurship</div>
+        <div class="edu-date">2020-2022</div>
+        <p>Relevant courses: New Business Development, Innovation and Structural Transformation, Risk Management, and
+          Accounting.</p>
+      </div>
+
+      <div class="education-item">
+        <div class="edu-header">
+          <span class="edu-institution">Coursera</span>
+          <span class="edu-location">Remote</span>
+        </div>
+        <div class="edu-degree"><a
+            href="https://www.coursera.org/account/accomplishments/specialization/certificate/WJ44RCAD9L5C">Deep
+            Learning Specialization</a></div>
+        <div class="edu-date">2019</div>
+      </div>
+
+      <div class="education-item">
+        <div class="edu-header">
+          <span class="edu-institution">Academy of Applied Pharmaceutical Sciences</span>
+          <span class="edu-location">Toronto, Canada</span>
+        </div>
+        <div class="edu-degree">Quality Assurance and Good Manufacturing Practices</div>
+        <div class="edu-date">2018</div>
+      </div>
+
+      <div class="education-item">
+        <div class="edu-header">
+          <span class="edu-institution">University of Trento</span>
+          <span class="edu-location">Italy</span>
+        </div>
+        <div class="edu-degree">Bachelor's Degree in Information Engineering and Business Organization</div>
+        <div class="edu-date">2014-2017</div>
+        <p>Relevant courses: Object-oriented Programming, Software Engineering, Project Management.</p>
+      </div>
+
+      <div class="education-item">
+        <div class="edu-header">
+          <span class="edu-institution">San Zeno Salesian Institute</span>
+          <span class="edu-location">Verona, Italy</span>
+        </div>
+        <div class="edu-degree">Electrical Engineering High School Diploma</div>
+        <div class="edu-date">2009-2014</div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>SKILLS</h2>
+      <ul class="skills">
+        <li>Languages: English (IELTS C1) and Italian (native)</li>
+        <li>Python</li>
+        <li>JavaScript/TypeScript</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>PostgreSQL</li>
+        <li>GCP</li>
+        <li>Git</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
