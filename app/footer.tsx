@@ -3,7 +3,6 @@ import { MonitorIcon, MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { AnimatedBackground } from "@/components/ui/animated-background";
-import { TextLoop } from "@/components/ui/text-loop";
 
 const THEMES_OPTIONS = [
 	{
@@ -73,10 +72,7 @@ export function Footer() {
 		<footer className="mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
 			<div className="flex items-center justify-between">
 				<a href="https://github.com/ibelick/nim" target="_blank" rel="noopener">
-					<TextLoop className="text-xs text-zinc-500">
-						<span>© {currentYear} MGB. All rights reserved.</span>
-						{/* <span>Built with Motion-Primitives.</span> */}
-					</TextLoop>
+					<span className="text-xs text-zinc-500">© {currentYear} MGB. All rights reserved.</span>
 				</a>
 				<div className="text-xs text-zinc-400">
 					<ThemeSwitch />
