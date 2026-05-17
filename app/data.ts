@@ -37,4 +37,4 @@ export const SOCIAL_LINKS: SocialLink[] = [
 	},
 ];
 
-export const EMAIL = "https://www.linkedin.com/in/mgbon/";
+export const EMAIL = "mu8qqy1h9@mozmail.com";

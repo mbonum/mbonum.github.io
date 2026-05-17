@@ -70,32 +70,38 @@ export const GENERATED_WORK_EXPERIENCE = [
 export const GENERATED_EDUCATION = [
   {
     "id": "education-1",
-    "school": "Coursera",
-    "location": "Remote",
-    "detail": "[Deep Learning"
+    "school": "University of Gothenburg, School of Business, Economics, and Law",
+    "location": "Sweden 2022",
+    "detail": "Master of Science in Knowledge-based Entrepreneurship"
   },
   {
     "id": "education-2",
-    "school": "Academy of Applied Pharmaceutical Sciences",
-    "location": "Toronto, Canada",
-    "detail": "Quality Assurance and Good Manufacturing Practices"
+    "school": "Coursera",
+    "location": "Remote 2019",
+    "detail": "[Deep Learning Specialization](https://www.coursera.org/account/accomplishments/specialization/certificate/WJ44RCAD9L5C)"
   },
   {
     "id": "education-3",
-    "school": "University of Trento",
-    "location": "Italy",
-    "detail": "Bachelor's Degree in Information Engineering and Business"
+    "school": "Academy of Applied Pharmaceutical Sciences",
+    "location": "Toronto, Canada 2018",
+    "detail": "Quality Assurance and Good Manufacturing Practices"
   },
   {
     "id": "education-4",
+    "school": "University of Trento",
+    "location": "Italy 2017",
+    "detail": "Bachelor's Degree in Information Engineering and Business Organization"
+  },
+  {
+    "id": "education-5",
     "school": "San Zeno Salesian Institute",
-    "location": "Verona, Italy",
-    "detail": "Electrical Engineering High School Diploma-2014"
+    "location": "Verona, Italy 2014",
+    "detail": "Electrical Engineering High School Diploma"
   }
 ] as const;
 
 export const GENERATED_SKILLS = [
-  "Languages: English (IELTS C1) and Italian (native).",
+  "<!-- - Languages: English (IELTS C1) and Italian (native). -->",
   "Tech stack: Python, JavaScript/TypeScript, SCSS, Tailwind CSS, Angular, React, Django, GCP, Jira, Confluence, Git."
 ] as const;
 

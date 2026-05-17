@@ -1,7 +1,6 @@
 "use client";
 import { XIcon } from "lucide-react";
 import { motion } from "motion/react";
-import Link from "next/link";
 import { Magnetic } from "@/components/ui/magnetic";
 import {
 	MorphingDialog,
@@ -10,7 +9,7 @@ import {
 	MorphingDialogContent,
 	MorphingDialogTrigger,
 } from "@/components/ui/morphing-dialog";
-import { Spotlight } from "@/components/ui/spotlight";
+import { GlowCard } from "@/components/ui/glow-card";
 import {
 	BLOG_POSTS,
 	EDUCATION,
@@ -175,31 +174,21 @@ export default function Personal() {
 	<h3 className="mb-5 text-lg font-medium">Blog</h3>
 				<div className="flex flex-col space-y-2">
 					{BLOG_POSTS.map((post) => (
-						<Link
-							key={post.uid}
-							className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30 block"
-							href={post.link}
-						>
-							<Spotlight
-								className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
-								size={64}
-							/>
-							<div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
-								<div className="relative flex w-full flex-row justify-between">
-									<div>
-										<h4 className="font-normal dark:text-zinc-100">
-											{post.title}
-										</h4>
-										<p className="text-zinc-500 dark:text-zinc-400 mt-1">
-											{post.description}
-										</p>
-									</div>
-									<p className="text-zinc-600 dark:text-zinc-400 whitespace-nowrap ml-4 mt-0.5">
-										{post.date}
+						<GlowCard key={post.uid} href={post.link}>
+							<div className="relative flex w-full flex-row justify-between">
+								<div>
+									<h4 className="font-normal dark:text-zinc-100">
+										{post.title}
+									</h4>
+									<p className="mt-1 text-zinc-500 dark:text-zinc-400">
+										{post.description}
 									</p>
 								</div>
+								<p className="ml-4 mt-0.5 whitespace-nowrap text-zinc-600 dark:text-zinc-400">
+									{post.date}
+								</p>
 							</div>
-						</Link>
+						</GlowCard>
 					))}
 				</div>
 			</motion.section>
@@ -212,33 +201,25 @@ export default function Personal() {
 				<h3 className="mb-5 text-lg font-medium">Work Experience</h3>
 				<div className="flex flex-col space-y-2">
 					{WORK_EXPERIENCE.map((job) => (
-						<a
-							className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
-							href={job.link}
-							target="_blank"
-							rel="noopener noreferrer"
+						<GlowCard
 							key={job.id}
+							href={job.link}
+							external
 						>
-							<Spotlight
-								className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
-								size={64}
-							/>
-							<div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
-								<div className="relative flex w-full flex-row justify-between">
-									<div>
-										<h4 className="font-normal dark:text-zinc-100">
-											{job.title}
-										</h4>
-										<p className="text-zinc-500 dark:text-zinc-400">
-											{job.company}
-										</p>
-									</div>
-									<p className="text-zinc-600 dark:text-zinc-400">
-										{job.start} - {job.end}
+							<div className="relative flex w-full flex-row justify-between">
+								<div>
+									<h4 className="font-normal dark:text-zinc-100">
+										{job.title}
+									</h4>
+									<p className="text-zinc-500 dark:text-zinc-400">
+										{job.company}
 									</p>
 								</div>
+								<p className="text-zinc-600 dark:text-zinc-400">
+									{job.start} - {job.end}
+								</p>
 							</div>
-						</a>
+						</GlowCard>
 					))}
 				</div>
 			</motion.section>
