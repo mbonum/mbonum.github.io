@@ -38,3 +38,19 @@ You can deploy your site to any hosting platform that supports Next.js. For the 
 ## About
 
 Nim is designed to make personal branding effortless and beautiful. If you enjoy it, consider sharing it and exploring [Motion-Primitives Pro](https://pro.motion-primitives.com/).
+
+## Content Sync
+
+This site publishes committed static content generated from local writing sources:
+
+- CV: `/home/mb/Documents/cv/cv.md`
+- Obsidian public posts: `/home/mb/Documents/ObsidianVault/Public`
+
+Run:
+
+```bash
+pnpm sync:content
+pnpm build
+```
+
+Commit the generated files before pushing.
