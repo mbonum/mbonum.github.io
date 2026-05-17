@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test:content": "node --test scripts/content-sync.test.mjs"
+    "test:content": "node --test scripts/content-sync.test.mjs",
+    "sync:content": "node scripts/sync-content.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
