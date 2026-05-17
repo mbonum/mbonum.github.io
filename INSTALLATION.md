@@ -17,13 +17,13 @@
 2. **Install dependencies**
 
    ```bash
-   npm install
+   pnpm i
    ```
 
 3. **Run the development server**
 
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 4. **Update the template data**
