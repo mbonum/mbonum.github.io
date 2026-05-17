@@ -139,7 +139,7 @@ function parseWorkExperience(section) {
 		const description = descParts.join("\n\n").trim();
 
 		return {
-			id: String.fromCharCode(96) + "work-${index + 1}" + String.fromCharCode(96),
+			id: `work-${index + 1}`,
 			title: title.trim(),
 			company: company.trim(),
 			location: location.trim(),

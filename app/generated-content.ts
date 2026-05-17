@@ -6,7 +6,7 @@ export const PROFILE = {
 
 export const GENERATED_WORK_EXPERIENCE = [
   {
-    "id": "`work-${index + 1}`",
+    "id": "work-1",
     "title": "QA Automation Engineer",
     "company": "DonTouch SA",
     "location": "Chiasso",
@@ -16,7 +16,7 @@ export const GENERATED_WORK_EXPERIENCE = [
     "link": "#"
   },
   {
-    "id": "`work-${index + 1}`",
+    "id": "work-2",
     "title": "Software Engineer",
     "company": "Alma Iura",
     "location": "Verona",
@@ -26,7 +26,7 @@ export const GENERATED_WORK_EXPERIENCE = [
     "link": "#"
   },
   {
-    "id": "`work-${index + 1}`",
+    "id": "work-3",
     "title": "Software Engineer",
     "company": "Calzedonia Group S.p.A. (Oniverse)",
     "location": "Verona",
@@ -36,7 +36,7 @@ export const GENERATED_WORK_EXPERIENCE = [
     "link": "#"
   },
   {
-    "id": "`work-${index + 1}`",
+    "id": "work-4",
     "title": "AI Trainer",
     "company": "Scale AI",
     "location": "Remote",
@@ -46,7 +46,7 @@ export const GENERATED_WORK_EXPERIENCE = [
     "link": "#"
   },
   {
-    "id": "`work-${index + 1}`",
+    "id": "work-5",
     "title": "Software analyst",
     "company": "Futura Sistemi S.r.l.",
     "location": "Verona",
@@ -56,7 +56,7 @@ export const GENERATED_WORK_EXPERIENCE = [
     "link": "#"
   },
   {
-    "id": "`work-${index + 1}`",
+    "id": "work-6",
     "title": "Web developer",
     "company": "RAILware (former division of Ciesse S.p.A.)",
     "location": "Verona",
