@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:content": "node --test scripts/content-sync.test.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
@@ -37,5 +38,12 @@
     "prettier-plugin-tailwindcss": "^0.6.10",
     "tailwindcss": "^4.0.0",
     "typescript": "^5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@tailwindcss/oxide",
+      "sharp",
+      "unrs-resolver"
+    ]
   }
 }
