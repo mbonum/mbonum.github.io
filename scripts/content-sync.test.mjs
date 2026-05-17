@@ -74,12 +74,12 @@ Fast-learning software engineer.
 
 **WORK EXPERIENCE**
 
-**QA Automation Engineer**, DonTouch SA, Chiasso/2026-present
+**QA Automation Engineer**, DonTouch SA, Chiasso 03/2026-present
 
 - Develop and maintain integration tests
 - Identify bugs
 
-**Software Engineer**, Alma Iura, Verona/2025-03/2026
+**Software Engineer**, Alma Iura, Verona 11/2025-03/2026
 
 Developed a CLM platform.
 
@@ -105,8 +105,8 @@ Master of Science in Knowledge-based Entrepreneurship-2022
 	assert.equal(parsed.workExperience.length, 2);
 	assert.equal(parsed.workExperience[0].title, "QA Automation Engineer");
 	assert.equal(parsed.workExperience[0].company, "DonTouch SA");
-	assert.equal(parsed.workExperience[1].start, "2025-03");
-	assert.equal(parsed.workExperience[1].end, "2026");
+	assert.equal(parsed.workExperience[1].start, "11/2025");
+	assert.equal(parsed.workExperience[1].end, "03/2026");
 	assert.equal(parsed.education.length, 1);
 	assert.equal(parsed.skills.length, 2);
 });

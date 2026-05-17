@@ -6,63 +6,63 @@ export const PROFILE = {
 
 export const GENERATED_WORK_EXPERIENCE = [
   {
-    "id": "work-1",
+    "id": "`work-${index + 1}`",
     "title": "QA Automation Engineer",
     "company": "DonTouch SA",
     "location": "Chiasso",
-    "start": "2026",
+    "start": "03/2026",
     "end": "present",
-    "description": "- Develop and maintain integration tests (Vitest) and end-to-end tests\n  (Playwright)\n- Author YAML test specifications and leverage AI models (Claude,\n  etc.) to generate test files at scale\n- Participate in the full development lifecycle: branching, code\n  reviews, merge requests, and approvals\n- Identify, document, and track bugs and quality issues",
+    "description": "- Develop and maintain integration tests (Vitest) and end-to-end tests (Playwright)\n\n- Author YAML test specifications and leverage AI models (Claude, etc.) to generate test files at scale\n\n- Participate in the full development lifecycle: branching, code reviews, merge requests, and approvals\n\n- Identify, document, and track bugs and quality issues",
     "link": "#"
   },
   {
-    "id": "work-2",
+    "id": "`work-${index + 1}`",
     "title": "Software Engineer",
     "company": "Alma Iura",
     "location": "Verona",
-    "start": "2025-03",
-    "end": "2026",
-    "description": "Developed and maintained an internal Contract Lifecycle Management (CLM)\nplatform and digital justice integrations that automate court\ncommunications and reduce manual tasks for attorneys and legal\nsecretaries.\n- Full-stack TypeScript: Vue 3 + Express.js, separation of concerns\n  architecture.\n- Backend: Prisma ORM, PostgreSQL, REST APIs, AWS (Lambda, RDS, S3,\n  CloudFront).\n- Agile modus operandi: writing user stories, technical documentation,\n  Jira, Confluence; and providing technical support.",
+    "start": "11/2025",
+    "end": "03/2026",
+    "description": "Developed and maintained an internal Contract Lifecycle Management (CLM)\nplatform and digital justice integrations that automate court\ncommunications and reduce manual tasks for attorneys and legal\nsecretaries.\n\n- Full-stack TypeScript: Vue 3 + Express.js, separation of concerns architecture.\n\n- Backend: Prisma ORM, PostgreSQL, REST APIs, AWS (Lambda, RDS, S3, CloudFront).\n\n- Agile modus operandi: writing user stories, technical documentation, Jira, Confluence; and providing technical support.",
     "link": "#"
   },
   {
-    "id": "work-3",
-    "title": "",
-    "company": "",
-    "location": "",
-    "start": "",
-    "end": "Present",
-    "description": "Verona/2023-10/2025\nDesigned and implemented AI-driven tools and automation solutions to\nstreamline processes and enhance e-commerce experiences. Key projects:\n- Developed an internal AI assistant with support, creative, and\n  coding agents powered by Gemini, OpenAI, and Claude APIs.\n  > Increased team productivity by approximately 20%,\n  > reducing repetitive documentation and coding tasks for developers\n  > and support teams.\n- Built an automated QA testing tool using Gemini 2.5 Computer Use,\n  Playwright, and Python to simulate user flows and detect regressions\n  in e-commerce platforms.\n  > Reduced manual QA time by \\~40% and enabled faster\n  > test cycles, improving release confidence and frequency.\n- Created a Salesforce web app for managing SF Commerce Cloud jobs via\n  OCAPI, enabling business users to handle job operations\n  independently.\n  > Reduced IT support ticket volume by \\~60%, empowering\n  > business users to manage job operations autonomously.\n- Produced 3D garment and fabric renderings using CLO3D, Blender,\n  SketchFab, and ThreeJS for integration into the e-commerce platform.\n  > Enhanced product visualization, contributing to\n  > improved customer engagement and a more immersive shopping\n  > experience.\n- Tech stack: Python, JavaScript/TypeScript, SCSS, TailwindCSS,\n  Angular, React, Django, GCP, Jira, Confluence, Git.",
+    "id": "`work-${index + 1}`",
+    "title": "Software Engineer",
+    "company": "Calzedonia Group S.p.A. (Oniverse)",
+    "location": "Verona",
+    "start": "10/2023",
+    "end": "10/2025",
+    "description": "Designed and implemented AI-driven tools and automation solutions to\nstreamline processes and enhance e-commerce experiences. Key projects:\n\n- Developed an internal AI assistant with support, creative, and coding agents powered by Gemini, OpenAI, and Claude APIs.\n\n  -> Increased team productivity by approximately 20%, reducing repetitive documentation and coding tasks for developers and support teams.\n\n- Built an automated QA testing tool using Gemini 2.5 Computer Use, Playwright, and Python to simulate user flows and detect regressions in e-commerce platforms.\n\n  -> Reduced manual QA time by \\~40% and enabled faster test cycles, improving release confidence and frequency.\n\n- Created a Salesforce web app for managing SF Commerce Cloud jobs via OCAPI, enabling business users to handle job operations independently.\n\n  -> Reduced IT support ticket volume by \\~60%, empowering\n  business users to manage job operations autonomously.\n\n- Produced 3D garment and fabric renderings using CLO3D, Blender, SketchFab, and ThreeJS for integration into the e-commerce platform.\n\n  -> Enhanced product visualization, contributing to improved customer engagement and a more immersive shopping experience.\n\n- Tech stack: Python, JavaScript/TypeScript, SCSS, TailwindCSS, Angular, React, Django, GCP, Jira, Confluence, Git.",
     "link": "#"
   },
   {
-    "id": "work-4",
+    "id": "`work-${index + 1}`",
     "title": "AI Trainer",
     "company": "Scale AI",
     "location": "Remote",
-    "start": "2024-09",
-    "end": "2025",
-    "description": "- Contributed to the training and improvement of Large Language Models\n  through high-quality data annotation and Reinforcement Learning from\n  Human Feedback (RLHF).\n- Performed detailed response evaluation and ranking to increase\n  accuracy, safety, and helpfulness of model outputs.",
+    "start": "07/2024",
+    "end": "09/2025",
+    "description": "- Contributed to the training and improvement of Large Language Models through high-quality data annotation and Reinforcement Learning from Human Feedback (RLHF).\n\n- Performed detailed response evaluation and ranking to increase accuracy, safety, and helpfulness of model outputs.",
     "link": "#"
   },
   {
-    "id": "work-5",
+    "id": "`work-${index + 1}`",
     "title": "Software analyst",
     "company": "Futura Sistemi S.r.l.",
     "location": "Verona",
-    "start": "2023-09",
-    "end": "2023",
-    "description": "- Translated customers' needs to new software features for the\n  development teams.\n- Solved various problems customers had using the company's software\n  solutions.\n- Designed and developed websites satisfying the needs of the\n  customers mainly using Figma and Wordpress.\n- Organized marketing events to show software demos to potential\n  customers.",
+    "start": "03/2023",
+    "end": "09/2023",
+    "description": "- Translated customers' needs to new software features for the development teams.\n\n- Solved various problems customers had using the company's software solutions.\n\n- Designed and developed websites satisfying the needs of the customers mainly using Figma and Wordpress.\n\n- Organized marketing events to show software demos to potential customers.",
     "link": "#"
   },
   {
-    "id": "work-6",
-    "title": "",
-    "company": "",
-    "location": "",
-    "start": "",
-    "end": "Present",
-    "description": "Verona/2017-06/2017\n- Developed a web platform that allows customers to configure remotely\n  parameters of Ciesse's railway energy meters EcoS.\n- Programmed in PHP, JavaScript (jQuery), AJAX, HTML, CSS, and SQL.",
+    "id": "`work-${index + 1}`",
+    "title": "Web developer",
+    "company": "RAILware (former division of Ciesse S.p.A.)",
+    "location": "Verona",
+    "start": "02/2017",
+    "end": "06/2017",
+    "description": "- Developed a web platform that allows customers to configure remotely parameters of Ciesse's railway energy meters EcoS.\n\n- Programmed in PHP, JavaScript (jQuery), AJAX, HTML, CSS, and SQL.",
     "link": "#"
   }
 ] as const;
@@ -96,16 +96,15 @@ export const GENERATED_EDUCATION = [
 
 export const GENERATED_SKILLS = [
   "Languages: English (IELTS C1) and Italian (native).",
-  "Tech stack: Python, JavaScript/TypeScript, SCSS, Tailwind CSS,",
-  "Angular, React, Django, GCP, Jira, Confluence, Git."
+  "Tech stack: Python, JavaScript/TypeScript, SCSS, Tailwind CSS, Angular, React, Django, GCP, Jira, Confluence, Git."
 ] as const;
 
 export const GENERATED_BLOG_POSTS = [
   {
     "title": "About My Work",
     "description": "",
-    "link": "/blog/${post.slug}",
-    "uid": "blog-${index + 1}",
+    "link": "/blog/about-my-work",
+    "uid": "blog-1",
     "date": "2026-05-16"
   }
 ] as const;

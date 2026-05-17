@@ -113,28 +113,33 @@ function parseWorkExperience(section) {
 		.filter(Boolean);
 
 	return entries.map((entry, index) => {
-		const lines = entry.split("\n");
-		const header = lines[0];
-		const match = header.match(/^\*\*(.+?)\*\*,\s*(.+?),\s*(.+)$/);
+		const [headerRaw, ...descParts] = entry.split(/\n\n+/);
+		const headerStr = headerRaw.replace(/\n/g, " ");
+		const match = headerStr.match(/^\*\*(.+?)\*\*,\s*(.+?),\s*(.+)$/);
 		const [, title = "", company = "", rawPeriod = ""] = match ?? [];
-		const [locationPart = "", ...periodParts] = rawPeriod.split("/");
-		const location = periodParts.length > 0 ? locationPart : "";
-		const period = periodParts.length > 0 ? periodParts.join("/") : locationPart;
-		const range = period.includes("/")
-			? period.split("/", 2)
-			: period.match(/^(.+?)-(present|\d{4}(?:-\d{2})?)$/i)?.slice(1, 3) ?? [
-					period,
-					"",
-				];
+
+		const lastSpaceIndex = rawPeriod.lastIndexOf(" ");
+		let location = "";
+		let period = rawPeriod;
+		if (lastSpaceIndex !== -1 && /[0-9]/.test(rawPeriod.slice(lastSpaceIndex + 1))) {
+			location = rawPeriod.slice(0, lastSpaceIndex).trim();
+			period = rawPeriod.slice(lastSpaceIndex + 1).trim();
+		} else {
+			if (/[0-9]/.test(rawPeriod)) {
+				period = rawPeriod;
+			} else {
+				location = rawPeriod;
+				period = "";
+			}
+		}
+
+		const range = period.split("-", 2);
 		const [start = "", end = ""] = range;
-		const description = lines
-			.slice(1)
-			.join("\n")
-			.replace(/\n+/g, "\n")
-			.trim();
+
+		const description = descParts.join("\n\n").trim();
 
 		return {
-			id: `work-${index + 1}`,
+			id: String.fromCharCode(96) + "work-${index + 1}" + String.fromCharCode(96),
 			title: title.trim(),
 			company: company.trim(),
 			location: location.trim(),
@@ -182,8 +187,8 @@ export const GENERATED_BLOG_POSTS = ${JSON.stringify(
 		posts.map((post, index) => ({
 			title: post.title,
 			description: post.description,
-			link: `/blog/\${post.slug}`,
-			uid: `blog-\${index + 1}`,
+			link: `/blog/${post.slug}`,
+			uid: `blog-${index + 1}`,
 			date: post.date,
 		})),
 		null,
@@ -194,14 +199,14 @@ export const GENERATED_BLOG_POSTS = ${JSON.stringify(
 
 export function renderBlogPage(post) {
 	return `export const metadata = {
-  title: \${JSON.stringify(post.title)},
-  description: \${JSON.stringify(post.description)},
+  title: ${JSON.stringify(post.title)},
+  description: ${JSON.stringify(post.description)},
   alternates: {
-    canonical: "/blog/\${post.slug}",
+    canonical: "/blog/${post.slug}",
   },
 };
 
-\${post.body.trim()}
+${post.body.trim()}
 `;
 }
 
