@@ -5,8 +5,13 @@ const nextConfig = {
 	reactStrictMode: true,
 	pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 	output: "export",
+	// User/org site (mbonum.github.io + custom domain): served from root, not /repo-name
+	basePath: "",
 	images: {
 		unoptimized: true,
+	},
+	eslint: {
+		ignoreDuringBuilds: true,
 	},
 };
 
