@@ -12,10 +12,8 @@ import {
 import { GlowCard } from "@/components/ui/glow-card";
 import {
 	BLOG_POSTS,
-	EDUCATION,
 	EMAIL,
 	PROJECTS,
-	SKILLS,
 	SOCIAL_LINKS,
 	SUMMARY,
 	WORK_EXPERIENCE,
@@ -201,11 +199,7 @@ export default function Personal() {
 				<h3 className="mb-5 text-lg font-medium">Work Experience</h3>
 				<div className="flex flex-col space-y-2">
 					{WORK_EXPERIENCE.map((job) => (
-						<GlowCard
-							key={job.id}
-							href={job.link}
-							external
-						>
+						<GlowCard key={job.id}>
 							<div className="relative flex w-full flex-row justify-between">
 								<div>
 									<h4 className="font-normal dark:text-zinc-100">
@@ -223,32 +217,6 @@ export default function Personal() {
 					))}
 				</div>
 			</motion.section>
-
-<motion.section variants={VARIANTS_SECTION} transition={TRANSITION_SECTION}>
-	<h3 className="mb-5 text-lg font-medium">Skills</h3>
-	<ul className="space-y-2 text-zinc-600 dark:text-zinc-400">
-		{SKILLS.map((skill) => (
-			<li key={skill}>{skill}</li>
-		))}
-	</ul>
-</motion.section>
-
-<motion.section variants={VARIANTS_SECTION} transition={TRANSITION_SECTION}>
-	<h3 className="mb-5 text-lg font-medium">Education</h3>
-	<div className="flex flex-col space-y-3">
-		{EDUCATION.map((item) => (
-			<div key={item.id}>
-				<h4 className="font-normal dark:text-zinc-100">{item.school}</h4>
-				<p className="text-zinc-500 dark:text-zinc-400">{item.detail}</p>
-				{item.location ? (
-					<p className="text-sm text-zinc-500 dark:text-zinc-500">
-						{item.location}
-					</p>
-				) : null}
-			</div>
-		))}
-	</div>
-</motion.section>
 
 			<motion.section
 				variants={VARIANTS_SECTION}

@@ -105,8 +105,10 @@ Master of Science in Knowledge-based Entrepreneurship-2022
 	assert.equal(parsed.workExperience.length, 2);
 	assert.equal(parsed.workExperience[0].title, "QA Automation Engineer");
 	assert.equal(parsed.workExperience[0].company, "DonTouch SA");
-	assert.equal(parsed.workExperience[1].start, "11/2025");
-	assert.equal(parsed.workExperience[1].end, "03/2026");
+	assert.equal(parsed.workExperience[0].start, "2026-03");
+	assert.equal(parsed.workExperience[0].end, "Present");
+	assert.equal(parsed.workExperience[1].start, "2025-11");
+	assert.equal(parsed.workExperience[1].end, "2026-03");
 	assert.equal(parsed.education.length, 1);
 	assert.equal(parsed.skills.length, 2);
 });

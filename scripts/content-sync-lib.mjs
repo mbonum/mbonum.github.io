@@ -92,6 +92,21 @@ function compactLines(value) {
 		.filter(Boolean);
 }
 
+function formatWorkDate(value) {
+	const trimmed = value.trim();
+	const monthYear = trimmed.match(/^(\d{2})\/(\d{4})$/);
+	if (monthYear) {
+		const [, month, year] = monthYear;
+		return `${year}-${month}`;
+	}
+
+	if (/^present$/i.test(trimmed)) {
+		return "Present";
+	}
+
+	return trimmed;
+}
+
 export function parseCv(markdown) {
 	const summary = sectionAfter(markdown, "SUMMARY").replace(/\s+/g, " ").trim();
 	const work = sectionAfter(markdown, "WORK EXPERIENCE");
@@ -143,8 +158,8 @@ function parseWorkExperience(section) {
 			title: title.trim(),
 			company: company.trim(),
 			location: location.trim(),
-			start: start.trim(),
-			end: end.trim() || "Present",
+			start: formatWorkDate(start),
+			end: formatWorkDate(end || "Present"),
 			description,
 			link: "#",
 		};

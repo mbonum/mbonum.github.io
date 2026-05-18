@@ -10,8 +10,8 @@ export const GENERATED_WORK_EXPERIENCE = [
     "title": "QA Automation Engineer",
     "company": "DonTouch SA",
     "location": "Chiasso",
-    "start": "03/2026",
-    "end": "present",
+    "start": "2026-03",
+    "end": "Present",
     "description": "- Develop and maintain integration tests (Vitest) and end-to-end tests (Playwright)\n\n- Author YAML test specifications and leverage AI models (Claude, etc.) to generate test files at scale\n\n- Participate in the full development lifecycle: branching, code reviews, merge requests, and approvals\n\n- Identify, document, and track bugs and quality issues",
     "link": "#"
   },
@@ -20,8 +20,8 @@ export const GENERATED_WORK_EXPERIENCE = [
     "title": "Software Engineer",
     "company": "Alma Iura",
     "location": "Verona",
-    "start": "11/2025",
-    "end": "03/2026",
+    "start": "2025-11",
+    "end": "2026-03",
     "description": "Developed and maintained an internal Contract Lifecycle Management (CLM)\nplatform and digital justice integrations that automate court\ncommunications and reduce manual tasks for attorneys and legal\nsecretaries.\n\n- Full-stack TypeScript: Vue 3 + Express.js, separation of concerns architecture.\n\n- Backend: Prisma ORM, PostgreSQL, REST APIs, AWS (Lambda, RDS, S3, CloudFront).\n\n- Agile modus operandi: writing user stories, technical documentation, Jira, Confluence; and providing technical support.",
     "link": "#"
   },
@@ -30,8 +30,8 @@ export const GENERATED_WORK_EXPERIENCE = [
     "title": "Software Engineer",
     "company": "Calzedonia Group S.p.A. (Oniverse)",
     "location": "Verona",
-    "start": "10/2023",
-    "end": "10/2025",
+    "start": "2023-10",
+    "end": "2025-10",
     "description": "Designed and implemented AI-driven tools and automation solutions to\nstreamline processes and enhance e-commerce experiences. Key projects:\n\n- Developed an internal AI assistant with support, creative, and coding agents powered by Gemini, OpenAI, and Claude APIs.\n\n  -> Increased team productivity by approximately 20%, reducing repetitive documentation and coding tasks for developers and support teams.\n\n- Built an automated QA testing tool using Gemini 2.5 Computer Use, Playwright, and Python to simulate user flows and detect regressions in e-commerce platforms.\n\n  -> Reduced manual QA time by \\~40% and enabled faster test cycles, improving release confidence and frequency.\n\n- Created a Salesforce web app for managing SF Commerce Cloud jobs via OCAPI, enabling business users to handle job operations independently.\n\n  -> Reduced IT support ticket volume by \\~60%, empowering\n  business users to manage job operations autonomously.\n\n- Produced 3D garment and fabric renderings using CLO3D, Blender, SketchFab, and ThreeJS for integration into the e-commerce platform.\n\n  -> Enhanced product visualization, contributing to improved customer engagement and a more immersive shopping experience.\n\n- Tech stack: Python, JavaScript/TypeScript, SCSS, TailwindCSS, Angular, React, Django, GCP, Jira, Confluence, Git.",
     "link": "#"
   },
@@ -40,8 +40,8 @@ export const GENERATED_WORK_EXPERIENCE = [
     "title": "AI Trainer",
     "company": "Scale AI",
     "location": "Remote",
-    "start": "07/2024",
-    "end": "09/2025",
+    "start": "2024-07",
+    "end": "2025-09",
     "description": "- Contributed to the training and improvement of Large Language Models through high-quality data annotation and Reinforcement Learning from Human Feedback (RLHF).\n\n- Performed detailed response evaluation and ranking to increase accuracy, safety, and helpfulness of model outputs.",
     "link": "#"
   },
@@ -50,8 +50,8 @@ export const GENERATED_WORK_EXPERIENCE = [
     "title": "Software analyst",
     "company": "Futura Sistemi S.r.l.",
     "location": "Verona",
-    "start": "03/2023",
-    "end": "09/2023",
+    "start": "2023-03",
+    "end": "2023-09",
     "description": "- Translated customers' needs to new software features for the development teams.\n\n- Solved various problems customers had using the company's software solutions.\n\n- Designed and developed websites satisfying the needs of the customers mainly using Figma and Wordpress.\n\n- Organized marketing events to show software demos to potential customers.",
     "link": "#"
   },
@@ -60,8 +60,8 @@ export const GENERATED_WORK_EXPERIENCE = [
     "title": "Web developer",
     "company": "RAILware (former division of Ciesse S.p.A.)",
     "location": "Verona",
-    "start": "02/2017",
-    "end": "06/2017",
+    "start": "2017-02",
+    "end": "2017-06",
     "description": "- Developed a web platform that allows customers to configure remotely parameters of Ciesse's railway energy meters EcoS.\n\n- Programmed in PHP, JavaScript (jQuery), AJAX, HTML, CSS, and SQL.",
     "link": "#"
   }
