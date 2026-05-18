@@ -100,10 +100,7 @@ export const GENERATED_EDUCATION = [
   }
 ] as const;
 
-export const GENERATED_SKILLS = [
-  "<!-- - Languages: English (IELTS C1) and Italian (native). -->",
-  "Tech stack: Python, JavaScript/TypeScript, SCSS, Tailwind CSS, Angular, React, Django, GCP, Jira, Confluence, Git."
-] as const;
+export const GENERATED_SKILLS = [] as const;
 
 export const GENERATED_BLOG_POSTS = [
   {
