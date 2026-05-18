@@ -1,15 +1,15 @@
 # Mirko Bonomi's Personal Site
 
-Personal website of Mirko Bonomi, built with Next.js 15, React 19, Tailwind CSS v4, and Motion.
+Personal website built with Next.js 15, React 19, Tailwind CSS v4, and Motion.
 
-Live demo: [https://mgb.is-a.dev](https://mgb.is-a.dev)
+Live site: [https://mgb.is-a.dev](https://mgb.is-a.dev)
 
 ## Features
 
-- Minimal one-page portfolio layout.
-- Blog support with MDX.
-- Responsive and accessible design.
-- Automated content sync from Obsidian and Markdown CV.
+- Minimal one-page portfolio layout
+- Blog support with MDX
+- Responsive and accessible design
+- Content sync from a local CV and Obsidian vault (optional)
 
 ## Getting Started
 
@@ -17,23 +17,24 @@ Live demo: [https://mgb.is-a.dev](https://mgb.is-a.dev)
 git clone https://github.com/mbonum/mbonum.github.io.git
 cd mbonum.github.io
 pnpm install
-pnpm run dev
+pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Content Sync
+## Content Sync (local)
 
-This site publishes committed static content generated from local writing sources:
-
-- CV: `/home/mb/Documents/cv/cv.md`
-- Obsidian public posts: `/home/mb/Documents/ObsidianVault/Public`
-
-Run:
+To regenerate site content from your own CV and blog sources, set paths via environment variables and run the sync script:
 
 ```bash
+export CV_PATH=/path/to/your/cv.md
+export OBSIDIAN_PUBLIC_DIR=/path/to/your/public/notes
 pnpm sync:content
 pnpm build
 ```
 
-Commit the generated files before pushing.
+Commit the generated files under `app/` before pushing if you want them published on GitHub Pages.
+
+## Deployment
+
+Pushes to `main` build and deploy via GitHub Actions (`.github/workflows/nextjs.yml`). In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**.

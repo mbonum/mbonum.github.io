@@ -82,14 +82,13 @@ You can deploy your site to any hosting platform that supports Next.js. For the 
 
 ## Updating Content
 
-Write public blog notes in `/home/mb/Documents/ObsidianVault/Public`.
-Edit the CV at `/home/mb/Documents/cv/cv.md`.
-
-Then run:
+Set local source paths (or use the defaults in `scripts/sync-content.mjs`), then run:
 
 ```bash
+export CV_PATH=/path/to/your/cv.md
+export OBSIDIAN_PUBLIC_DIR=/path/to/your/public/notes
 pnpm sync:content
 pnpm build
 ```
 
-The sync command generates `app/generated-content.ts` and blog routes under `app/blog/<slug>/page.mdx`.
+The sync command generates `app/generated-content.ts` and blog routes under `app/blog/<slug>/page.mdx`. Commit generated files before pushing.
