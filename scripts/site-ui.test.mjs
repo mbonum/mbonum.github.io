@@ -37,3 +37,29 @@ test("generated work experience dates use YYYY-MM format", async () => {
 	assert.doesNotMatch(generated, /"start": "\d{2}\/\d{4}"/);
 	assert.doesNotMatch(generated, /"end": "\d{2}\/\d{4}"/);
 });
+
+test("contact email is masked on the homepage", async () => {
+	const page = await readFile("app/page.tsx", "utf8");
+
+	assert.doesNotMatch(page, /\bEMAIL\b/);
+	assert.doesNotMatch(page, /mailto:/);
+	assert.match(page, /mu8qqy1h9 \[at\] mozmail \[dot\] com/);
+});
+
+test("homepage imports morphing dialog components from local UI module", async () => {
+	const page = await readFile("app/page.tsx", "utf8");
+
+	assert.match(page, /from ['"]@\/components\/ui\/morphing-dialog['"]/);
+	assert.match(page, /import \{ motion \} from ['"]motion\/react['"]/);
+	assert.doesNotMatch(page, /MorphingDialogTrigger,\s*\n\} from ['"]motion\/react['"]/);
+});
+
+test("social links open in a new tab", async () => {
+	const page = await readFile("app/page.tsx", "utf8");
+	const socialLinkStart = page.indexOf("function MagneticSocialLink");
+	const personalStart = page.indexOf("export default function Personal");
+	const socialLinkComponent = page.slice(socialLinkStart, personalStart);
+
+	assert.match(socialLinkComponent, /target="_blank"/);
+	assert.match(socialLinkComponent, /rel="noopener noreferrer"/);
+});

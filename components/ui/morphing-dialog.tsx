@@ -20,6 +20,7 @@ import { createPortal } from "react-dom";
 import { cn } from "@/lib/utils";
 import { XIcon } from "lucide-react";
 import useClickOutside from "@/hooks/useClickOutside";
+import { useIsClient } from "@/hooks/useIsClient";
 
 export type MorphingDialogContextType = {
 	isOpen: boolean;
@@ -228,14 +229,9 @@ export type MorphingDialogContainerProps = {
 
 function MorphingDialogContainer({ children }: MorphingDialogContainerProps) {
 	const { isOpen, uniqueId } = useMorphingDialog();
-	const [mounted, setMounted] = useState(false);
+	const isClient = useIsClient();
 
-	useEffect(() => {
-		setMounted(true);
-		return () => setMounted(false);
-	}, []);
-
-	if (!mounted) return null;
+	if (!isClient) return null;
 
 	return createPortal(
 		<AnimatePresence initial={false} mode="sync">

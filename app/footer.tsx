@@ -1,8 +1,8 @@
 "use client";
 import { MonitorIcon, MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import { AnimatedBackground } from "@/components/ui/animated-background";
+import { useIsClient } from "@/hooks/useIsClient";
 
 const THEMES_OPTIONS = [
 	{
@@ -23,14 +23,10 @@ const THEMES_OPTIONS = [
 ];
 
 function ThemeSwitch() {
-	const [mounted, setMounted] = useState(false);
+	const isClient = useIsClient();
 	const { theme, setTheme } = useTheme();
 
-	useEffect(() => {
-		setMounted(true);
-	}, []);
-
-	if (!mounted) {
+	if (!isClient) {
 		return null;
 	}
 

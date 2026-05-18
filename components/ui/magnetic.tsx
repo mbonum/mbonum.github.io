@@ -25,7 +25,8 @@ export function Magnetic({
 	actionArea = "self",
 	springOptions = SPRING_CONFIG,
 }: MagneticProps) {
-	const [isHovered, setIsHovered] = useState(false);
+	const [isHovered, setIsHovered] = useState(actionArea === "global");
+	const isActive = actionArea === "global" || isHovered;
 	const ref = useRef<HTMLDivElement>(null);
 
 	const x = useMotionValue(0);
@@ -45,7 +46,7 @@ export function Magnetic({
 
 				const absoluteDistance = Math.sqrt(distanceX ** 2 + distanceY ** 2);
 
-				if (isHovered && absoluteDistance <= range) {
+				if (isActive && absoluteDistance <= range) {
 					const scale = 1 - absoluteDistance / range;
 					x.set(distanceX * intensity * scale);
 					y.set(distanceY * intensity * scale);
@@ -61,7 +62,7 @@ export function Magnetic({
 		return () => {
 			document.removeEventListener("mousemove", calculateDistance);
 		};
-	}, [ref, isHovered, intensity, range]);
+	}, [isActive, intensity, range, x, y]);
 
 	useEffect(() => {
 		if (actionArea === "parent" && ref.current?.parentElement) {
@@ -77,8 +78,6 @@ export function Magnetic({
 				parent.removeEventListener("mouseenter", handleParentEnter);
 				parent.removeEventListener("mouseleave", handleParentLeave);
 			};
-		} else if (actionArea === "global") {
-			setIsHovered(true);
 		}
 	}, [actionArea]);
 
