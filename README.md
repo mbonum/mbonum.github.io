@@ -35,6 +35,16 @@ pnpm build
 
 Commit the generated files under `app/` before pushing if you want them published on GitHub Pages.
 
+## Analytics
+
+The site supports free, privacy-friendly aggregate analytics through Cloudflare Web Analytics. Create a Web Analytics site in Cloudflare, copy the beacon token, and add it as a GitHub repository variable:
+
+```bash
+NEXT_PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN=your-cloudflare-token
+```
+
+When the token is missing, the analytics script is not rendered. Blog article opens appear in Cloudflare as page views for `/blog/...` paths.
+
 ## Deployment
 
 Pushes to `main` build and deploy via GitHub Actions (`.github/workflows/nextjs.yml`). In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**.

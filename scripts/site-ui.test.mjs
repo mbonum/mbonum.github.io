@@ -63,3 +63,25 @@ test("social links open in a new tab", async () => {
 	assert.match(socialLinkComponent, /target="_blank"/);
 	assert.match(socialLinkComponent, /rel="noopener noreferrer"/);
 });
+
+test("root layout mounts token-gated Cloudflare Web Analytics", async () => {
+	const analytics = await readFile("app/analytics.tsx", "utf8");
+	const layout = await readFile("app/layout.tsx", "utf8");
+
+	assert.match(analytics, /NEXT_PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN/);
+	assert.match(analytics, /static\.cloudflareinsights\.com\/beacon\.min\.js/);
+	assert.match(analytics, /data-cf-beacon/);
+	assert.match(analytics, /strategy="afterInteractive"/);
+	assert.match(layout, /import \{ Analytics \} from ['"]\.\/analytics['"]/);
+	assert.match(layout, /<Analytics \/>/);
+});
+
+test("deployment exposes Cloudflare Web Analytics token to the build", async () => {
+	const workflow = await readFile(".github/workflows/nextjs.yml", "utf8");
+
+	assert.match(workflow, /NEXT_PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN/);
+	assert.match(
+		workflow,
+		/\$\{\{\s*vars\.NEXT_PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN\s*\}\}/,
+	);
+});

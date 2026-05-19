@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { ThemeProvider } from 'next-themes'
 import { Geist, Geist_Mono } from 'next/font/google'
+import { Analytics } from './analytics'
 import { Footer } from './footer'
 import './globals.css'
 import { Header } from './header'
@@ -96,6 +97,7 @@ export default function RootLayout({
             </div>
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
