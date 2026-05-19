@@ -43,6 +43,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+docs/superpowers
+strix_runs
+
 .code-review-graph
 .superpowers
 .zed
