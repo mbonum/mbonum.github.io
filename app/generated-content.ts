@@ -102,12 +102,12 @@ export const GENERATED_EDUCATION = [
 
 export const GENERATED_SKILLS = [] as const;
 
-export const GENERATED_BLOG_POSTS = [
-  {
-    "title": "About My Work",
-    "description": "",
-    "link": "/blog/about-my-work",
-    "uid": "blog-1",
-    "date": "2026-05-16"
-  }
-] as const;
+export type GeneratedBlogPost = {
+  title: string;
+  description: string;
+  link: string;
+  uid: string;
+  date: string;
+};
+
+export const GENERATED_BLOG_POSTS: readonly GeneratedBlogPost[] = [] as const;

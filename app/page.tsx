@@ -174,31 +174,33 @@ export default function Personal() {
         </motion.section>
       ) : null}
 
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
-        <h3 className="mb-5 text-lg font-medium">Blog</h3>
-        <div className="flex flex-col space-y-2">
-          {BLOG_POSTS.map((post) => (
-            <GlowCard key={post.uid} href={post.link}>
-              <div className="relative flex w-full flex-row justify-between">
-                <div>
-                  <h4 className="font-normal dark:text-zinc-100">
-                    {post.title}
-                  </h4>
-                  <p className="mt-1 text-zinc-500 dark:text-zinc-400">
-                    {post.description}
+      {BLOG_POSTS.length > 0 ? (
+        <motion.section
+          variants={VARIANTS_SECTION}
+          transition={TRANSITION_SECTION}
+        >
+          <h3 className="mb-5 text-lg font-medium">Blog</h3>
+          <div className="flex flex-col space-y-2">
+            {BLOG_POSTS.map((post) => (
+              <GlowCard key={post.uid} href={post.link}>
+                <div className="relative flex w-full flex-row justify-between">
+                  <div>
+                    <h4 className="font-normal dark:text-zinc-100">
+                      {post.title}
+                    </h4>
+                    <p className="mt-1 text-zinc-500 dark:text-zinc-400">
+                      {post.description}
+                    </p>
+                  </div>
+                  <p className="mt-0.5 ml-4 whitespace-nowrap text-zinc-600 dark:text-zinc-400">
+                    {post.date}
                   </p>
                 </div>
-                <p className="mt-0.5 ml-4 whitespace-nowrap text-zinc-600 dark:text-zinc-400">
-                  {post.date}
-                </p>
-              </div>
-            </GlowCard>
-          ))}
-        </div>
-      </motion.section>
+              </GlowCard>
+            ))}
+          </div>
+        </motion.section>
+      ) : null}
 
       <motion.section
         variants={VARIANTS_SECTION}

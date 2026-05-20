@@ -21,6 +21,13 @@ test("blog layout has no copy-url action", async () => {
 	assert.doesNotMatch(layout, />URL</);
 });
 
+test("homepage only renders the blog section when posts exist", async () => {
+	const page = await readFile("app/page.tsx", "utf8");
+
+	assert.match(page, /BLOG_POSTS\.length > 0 \?/);
+	assert.match(page, /<h3 className="mb-5 text-lg font-medium">Blog<\/h3>/);
+});
+
 test("root layout keeps footer at the viewport bottom on short pages", async () => {
 	const layout = await readFile("app/layout.tsx", "utf8");
 

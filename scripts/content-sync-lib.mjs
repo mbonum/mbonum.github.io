@@ -198,7 +198,15 @@ export const GENERATED_EDUCATION = ${JSON.stringify(cv.education, null, 2)} as c
 
 export const GENERATED_SKILLS = ${JSON.stringify(cv.skills, null, 2)} as const;
 
-export const GENERATED_BLOG_POSTS = ${JSON.stringify(
+export type GeneratedBlogPost = {
+  title: string;
+  description: string;
+  link: string;
+  uid: string;
+  date: string;
+};
+
+export const GENERATED_BLOG_POSTS: readonly GeneratedBlogPost[] = ${JSON.stringify(
 		posts.map((post, index) => ({
 			title: post.title,
 			description: post.description,

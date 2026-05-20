@@ -4,6 +4,7 @@ import {
 	extractBlogMetadata,
 	parseCv,
 	parseFrontmatter,
+	renderGeneratedContent,
 	slugify,
 } from "./content-sync-lib.mjs";
 
@@ -111,4 +112,22 @@ Master of Science in Knowledge-based Entrepreneurship-2022
 	assert.equal(parsed.workExperience[1].end, "2026-03");
 	assert.equal(parsed.education.length, 1);
 	assert.equal(parsed.skills.length, 2);
+});
+
+test("renderGeneratedContent preserves blog post element type when there are no posts", () => {
+	const rendered = renderGeneratedContent({
+		cv: {
+			summary: "Fast-learning software engineer.",
+			workExperience: [],
+			education: [],
+			skills: [],
+		},
+		posts: [],
+	});
+
+	assert.match(rendered, /type GeneratedBlogPost =/);
+	assert.match(
+		rendered,
+		/export const GENERATED_BLOG_POSTS: readonly GeneratedBlogPost\[] = \[\] as const;/,
+	);
 });
