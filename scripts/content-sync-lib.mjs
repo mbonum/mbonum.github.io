@@ -80,7 +80,7 @@ export function extractBlogMetadata({ filename, content, mtime }) {
 function sectionAfter(markdown, heading) {
 	const escaped = heading.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 	const match = markdown.match(
-		new RegExp(`\\*\\*${escaped}\\*\\*\\s*\\n([\\s\\S]*?)(?=\\n---\\n|$)`, "i"),
+		new RegExp(`\\*\\*${escaped}\\*\\*\\s*\\n([\\s\\S]*?)(?=\\n[ \\t]*-{3,}[ \\t]*\\n|$)`, "i"),
 	);
 	return match?.[1]?.trim() ?? "";
 }
@@ -92,12 +92,39 @@ function compactLines(value) {
 		.filter(Boolean);
 }
 
+const MONTH_NUMBERS = {
+	jan: "01",
+	feb: "02",
+	mar: "03",
+	apr: "04",
+	may: "05",
+	jun: "06",
+	jul: "07",
+	aug: "08",
+	sep: "09",
+	oct: "10",
+	nov: "11",
+	dec: "12",
+};
+
+const WORK_DATE_TOKEN =
+	/(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{4}|\d{2}\/\d{4}/i;
+
 function formatWorkDate(value) {
 	const trimmed = value.trim();
 	const monthYear = trimmed.match(/^(\d{2})\/(\d{4})$/);
 	if (monthYear) {
 		const [, month, year] = monthYear;
 		return `${year}-${month}`;
+	}
+
+	const namedMonthYear = trimmed.match(/^([A-Za-z]{3,9})\s+(\d{4})$/);
+	if (namedMonthYear) {
+		const [, monthName, year] = namedMonthYear;
+		const month = MONTH_NUMBERS[monthName.slice(0, 3).toLowerCase()];
+		if (month) {
+			return `${year}-${month}`;
+		}
 	}
 
 	if (/^present$/i.test(trimmed)) {
@@ -133,12 +160,12 @@ function parseWorkExperience(section) {
 		const match = headerStr.match(/^\*\*(.+?)\*\*,\s*(.+?),\s*(.+)$/);
 		const [, title = "", company = "", rawPeriod = ""] = match ?? [];
 
-		const lastSpaceIndex = rawPeriod.lastIndexOf(" ");
 		let location = "";
 		let period = rawPeriod;
-		if (lastSpaceIndex !== -1 && /[0-9]/.test(rawPeriod.slice(lastSpaceIndex + 1))) {
-			location = rawPeriod.slice(0, lastSpaceIndex).trim();
-			period = rawPeriod.slice(lastSpaceIndex + 1).trim();
+		const dateMatch = rawPeriod.match(WORK_DATE_TOKEN);
+		if (dateMatch?.index !== undefined) {
+			location = rawPeriod.slice(0, dateMatch.index).trim();
+			period = rawPeriod.slice(dateMatch.index).trim();
 		} else {
 			if (/[0-9]/.test(rawPeriod)) {
 				period = rawPeriod;

@@ -37,6 +37,34 @@ const TRANSITION_SECTION = {
   duration: 0.3,
 }
 
+const MONTH_LABELS = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
+]
+
+function formatWorkDate(date: string) {
+  const match = /^(\d{4})-(\d{2})$/.exec(date)
+
+  if (!match) {
+    return date
+  }
+
+  const [, year, month] = match
+  const monthLabel = MONTH_LABELS[Number(month) - 1]
+
+  return monthLabel ? `${monthLabel} ${year}` : date
+}
+
 // const CONTACT_EMAIL = "mu8qqy1h9 [at] mozmail [dot] com";
 
 type ProjectVideoProps = {
@@ -220,7 +248,7 @@ export default function Personal() {
                   </p>
                 </div>
                 <p className="text-zinc-600 dark:text-zinc-400">
-                  {job.start} - {job.end}
+                  {formatWorkDate(job.start)} - {formatWorkDate(job.end)}
                 </p>
               </div>
             </GlowCard>

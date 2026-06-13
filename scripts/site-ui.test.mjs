@@ -45,6 +45,15 @@ test("generated work experience dates use YYYY-MM format", async () => {
 	assert.doesNotMatch(generated, /"end": "\d{2}\/\d{4}"/);
 });
 
+test("homepage formats work experience date ranges for readability", async () => {
+	const page = await readFile("app/page.tsx", "utf8");
+
+	assert.match(page, /function formatWorkDate/);
+	assert.match(page, /formatWorkDate\(job\.start\)/);
+	assert.match(page, /formatWorkDate\(job\.end\)/);
+	assert.doesNotMatch(page, /\{job\.start\} - \{job\.end\}/);
+});
+
 test("contact email is masked on the homepage", async () => {
 	const page = await readFile("app/page.tsx", "utf8");
 

@@ -114,6 +114,83 @@ Master of Science in Knowledge-based Entrepreneurship-2022
 	assert.equal(parsed.skills.length, 2);
 });
 
+test("parseCv stops summary at long markdown separators", () => {
+	const cv = `**SUMMARY**
+
+Software development engineer in Test (SDET) with software engineering
+experience across test automation.
+
+------------------------------------------------------------------------
+
+**WORK EXPERIENCE**
+
+**SDET / QA Automation Engineer**, DonTouch SA, Chiasso 03/2026-present
+
+- Develop and maintain integration tests
+
+------------------------------------------------------------------------
+
+**EDUCATION**
+
+**University of Gothenburg** Sweden
+
+Master of Science in Knowledge-based Entrepreneurship-2022
+
+------------------------------------------------------------------------
+
+**SKILLS**
+
+- Tech stack: Python, TypeScript, React.
+`;
+
+	const parsed = parseCv(cv);
+
+	assert.equal(
+		parsed.summary,
+		"Software development engineer in Test (SDET) with software engineering experience across test automation.",
+	);
+	assert.doesNotMatch(parsed.summary, /WORK EXPERIENCE/);
+	assert.doesNotMatch(parsed.summary, /EDUCATION/);
+	assert.doesNotMatch(parsed.summary, /SKILLS/);
+});
+
+test("parseCv extracts month-name work dates when location is glued to the date", () => {
+	const cv = `**SUMMARY**
+
+Fast-learning software engineer.
+
+------------------------------------------------------------------------
+
+**WORK EXPERIENCE**
+
+**SDET / QA Automation Engineer**, DonTouch SA, ChiassoMar 2026 -
+Present
+
+- Develop and maintain integration tests
+
+**Software Engineer**, Alma Iura, VeronaOct 2025 - Mar 2026
+
+Developed a CLM platform.
+
+------------------------------------------------------------------------
+
+**EDUCATION**
+
+------------------------------------------------------------------------
+
+**SKILLS**
+`;
+
+	const parsed = parseCv(cv);
+
+	assert.equal(parsed.workExperience[0].location, "Chiasso");
+	assert.equal(parsed.workExperience[0].start, "2026-03");
+	assert.equal(parsed.workExperience[0].end, "Present");
+	assert.equal(parsed.workExperience[1].location, "Verona");
+	assert.equal(parsed.workExperience[1].start, "2025-10");
+	assert.equal(parsed.workExperience[1].end, "2026-03");
+});
+
 test("renderGeneratedContent preserves blog post element type when there are no posts", () => {
 	const rendered = renderGeneratedContent({
 		cv: {
