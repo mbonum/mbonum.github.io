@@ -120,7 +120,7 @@ export type GeneratedBlogPost = {
 export const GENERATED_BLOG_POSTS: readonly GeneratedBlogPost[] = [
   {
     "title": "Workflow",
-    "description": "1. Write/edit blog article in `/public/post1.md` or update `/job/cv.tex`\n2. Run script to:\n   - run `pandoc` command to convert LaTeX to properly formatted markdown\n   - run `pnpm sync:content` and `pnpm build` to build the static site\n   - git add, commit, push to repo\n3. Refresh website",
+    "description": "1. Write/edit blog article in Obsidian vault `/public/<title>.md` or update in `/job/cv.tex`\n2. Run script to:\n   - run `pandoc` command to convert LaTeX to properly formatted markdown\n   - run `pnpm sync:content` to get all the md files\n   - run `pnpm build` to build the static site\n   - git add, commit, and push to repo\n3. Refresh website\n \n## Tech stack\n- node v24.22.0, pnpm, Next.js\n- TypeScript, HTML, CSS",
     "link": "/blog/workflow",
     "uid": "blog-1",
     "date": "2026-10-30"
