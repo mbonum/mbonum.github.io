@@ -1,79 +1,81 @@
-"use client";
-import { MonitorIcon, MoonIcon, SunIcon } from "lucide-react";
-import { useTheme } from "next-themes";
-import { AnimatedBackground } from "@/components/ui/animated-background";
-import { useIsClient } from "@/hooks/useIsClient";
+'use client'
+import { AnimatedBackground } from '@/components/ui/animated-background'
+import { useIsClient } from '@/hooks/useIsClient'
+import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
+import { useTheme } from 'next-themes'
 
 const THEMES_OPTIONS = [
-	{
-		label: "Light",
-		id: "light",
-		icon: <SunIcon className="h-4 w-4" />,
-	},
-	{
-		label: "Dark",
-		id: "dark",
-		icon: <MoonIcon className="h-4 w-4" />,
-	},
-	{
-		label: "System",
-		id: "system",
-		icon: <MonitorIcon className="h-4 w-4" />,
-	},
-];
+  {
+    label: 'Light',
+    id: 'light',
+    icon: <SunIcon className="h-4 w-4" />,
+  },
+  {
+    label: 'Dark',
+    id: 'dark',
+    icon: <MoonIcon className="h-4 w-4" />,
+  },
+  {
+    label: 'System',
+    id: 'system',
+    icon: <MonitorIcon className="h-4 w-4" />,
+  },
+]
 
 function ThemeSwitch() {
-	const isClient = useIsClient();
-	const { theme, setTheme } = useTheme();
+  const isClient = useIsClient()
+  const { theme, setTheme } = useTheme()
 
-	if (!isClient) {
-		return null;
-	}
+  if (!isClient) {
+    return null
+  }
 
-	return (
-		<AnimatedBackground
-			className="pointer-events-none rounded-lg bg-zinc-100 dark:bg-zinc-800"
-			defaultValue={theme}
-			transition={{
-				type: "spring",
-				bounce: 0,
-				duration: 0.2,
-			}}
-			enableHover={false}
-			onValueChange={(id) => {
-				setTheme(id as string);
-			}}
-		>
-			{THEMES_OPTIONS.map((theme) => {
-				return (
-					<button
-						key={theme.id}
-						className="inline-flex h-7 w-7 items-center justify-center text-zinc-500 transition-colors duration-100 focus-visible:outline-2 data-[checked=true]:text-zinc-950 dark:text-zinc-400 dark:data-[checked=true]:text-zinc-50"
-						type="button"
-						aria-label={`Switch to ${theme.label} theme`}
-						data-id={theme.id}
-					>
-						{theme.icon}
-					</button>
-				);
-			})}
-		</AnimatedBackground>
-	);
+  return (
+    <AnimatedBackground
+      className="pointer-events-none rounded-lg bg-zinc-100 dark:bg-zinc-800"
+      defaultValue={theme}
+      transition={{
+        type: 'spring',
+        bounce: 0,
+        duration: 0.2,
+      }}
+      enableHover={false}
+      onValueChange={(id) => {
+        setTheme(id as string)
+      }}
+    >
+      {THEMES_OPTIONS.map((theme) => {
+        return (
+          <button
+            key={theme.id}
+            className="inline-flex h-7 w-7 items-center justify-center text-zinc-500 transition-colors duration-100 focus-visible:outline-2 data-[checked=true]:text-zinc-950 dark:text-zinc-400 dark:data-[checked=true]:text-zinc-50"
+            type="button"
+            aria-label={`Switch to ${theme.label} theme`}
+            data-id={theme.id}
+          >
+            {theme.icon}
+          </button>
+        )
+      })}
+    </AnimatedBackground>
+  )
 }
 
-const currentYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear()
 
 export function Footer() {
-	return (
-		<footer className="mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
-			<div className="flex items-center justify-between">
-				<a href="https://github.com/ibelick/nim" target="_blank" rel="noopener">
-					<span className="text-xs text-zinc-500">© {currentYear} MGB. All rights reserved.</span>
-				</a>
-				<div className="text-xs text-zinc-400">
-					<ThemeSwitch />
-				</div>
-			</div>
-		</footer>
-	);
+  return (
+    <footer className="mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
+      <div className="flex items-center justify-between">
+        {/*<a href="https://github.com/mbonum" target="_blank" rel="noopener">*/}
+        <span className="text-xs text-zinc-500">
+          © {currentYear} Mirko Bonomi. All rights reserved.
+        </span>
+        {/*</a>*/}
+        <div className="text-xs text-zinc-400">
+          <ThemeSwitch />
+        </div>
+      </div>
+    </footer>
+  )
 }

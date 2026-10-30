@@ -95,8 +95,8 @@ export const GENERATED_EDUCATION = [
 ] as const;
 
 export const GENERATED_SKILLS = [
-  "Testing: Manual bug testing, Functional, exploratory, integration, end-to-end,",
-  "regression, API testing, requirements review, test scenario",
+  "Testing: Manual, functional, exploratory, integration, end-to-end,",
+  "regression, and API testing; requirements review, test scenario",
   "design, bug reporting, defect investigation, release validation.",
   "Test automation: Python, Playwright, Vitest, Postman, YAML test",
   "specifications, Jenkins CI/CD.",
