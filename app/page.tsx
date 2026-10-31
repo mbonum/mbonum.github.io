@@ -216,9 +216,9 @@ export default function Personal() {
                     <h4 className="font-normal dark:text-zinc-100">
                       {post.title}
                     </h4>
-                    <p className="mt-1 text-zinc-500 dark:text-zinc-400">
+                    {/*<p className="mt-1 text-zinc-500 dark:text-zinc-400">
                       {post.description}
-                    </p>
+                    </p>*/}
                   </div>
                   <p className="mt-0.5 ml-4 whitespace-nowrap text-zinc-600 dark:text-zinc-400">
                     {post.date}

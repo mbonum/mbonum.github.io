@@ -4,7 +4,7 @@ export const PROFILE = {
   "summary": "Quality Test Engineer with 3+ years of experience across software engineering and test automation. Designs and implements Python, Playwright, Vitest, and RESTful API automation for functional, exploratory, integration, end-to-end, and regression testing. Combines ISTQB-certified testing foundations with AI-assisted coding, Linux and Docker workflows, Jenkins CI/CD, and hands-on release validation in Agile teams."
 } as const;
 
-export const GENERATED_WORK_EXPERIENCE = [
+export const EXTRACTED_WORK_EXPERIENCE = [
   {
     "id": "work-1",
     "title": "QA Test Engineer",
@@ -67,7 +67,7 @@ export const GENERATED_WORK_EXPERIENCE = [
   }
 ] as const;
 
-export const GENERATED_EDUCATION = [
+export const EXTRACTED_EDUCATION = [
   {
     "id": "education-1",
     "school": "University of Trento",
@@ -94,7 +94,7 @@ export const GENERATED_EDUCATION = [
   }
 ] as const;
 
-export const GENERATED_SKILLS = [
+export const EXTRACTED_SKILLS = [
   "Testing: Manual, functional, exploratory, integration, end-to-end,",
   "regression, and API testing; requirements review, test scenario",
   "design, bug reporting, defect investigation, release validation.",
@@ -117,12 +117,19 @@ export type GeneratedBlogPost = {
   date: string;
 };
 
-export const GENERATED_BLOG_POSTS: readonly GeneratedBlogPost[] = [
+export const EXTRACTED_BLOG_POSTS: readonly GeneratedBlogPost[] = [
+  {
+    "title": "Why",
+    "description": "",
+    "link": "/blog/why",
+    "uid": "blog-1",
+    "date": "2026-10-30"
+  },
   {
     "title": "Workflow",
     "description": "1. Write/edit blog article in Obsidian vault `/public/<title>.md` or update in `/job/cv.tex`\n2. Run script to:\n   - run `pandoc` command to convert LaTeX to properly formatted markdown\n   - run `pnpm sync:content` to get all the md files\n   - run `pnpm build` to build the static site\n   - git add, commit, and push to repo\n3. Refresh website\n \n## Tech stack\n- node v24.22.0, pnpm, Next.js\n- TypeScript, HTML, CSS",
     "link": "/blog/workflow",
-    "uid": "blog-1",
+    "uid": "blog-2",
     "date": "2026-10-30"
   }
 ] as const;

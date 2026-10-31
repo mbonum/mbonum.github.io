@@ -10,14 +10,27 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       src,
       alt,
       caption,
+      width,
+      height,
+      fill,
     }: {
       src: string
       alt: string
       caption: string
+      width: number
+      height: number
+      fill: boolean
     }) => {
       return (
         <figure>
-          <Image src={src} alt={alt} className="rounded-xl" />
+          <Image
+            src={src}
+            alt={alt}
+            className="rounded-xl"
+            width={width}
+            height={height}
+            fill={fill}
+          />
           <figcaption className="text-center">{caption}</figcaption>
         </figure>
       )
