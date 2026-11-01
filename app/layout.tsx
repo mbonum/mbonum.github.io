@@ -29,23 +29,23 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/favicon-civet/civet.min.svg',
+        url: 'favicon.ico',
         type: 'image/svg+xml',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/favicon-civet-white/civet-white.min.svg',
+        url: 'favicon.ico',
         type: 'image/svg+xml',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/favicon-civet/favicon-32x32.png',
+        url: 'favicon.ico',
         sizes: '32x32',
         type: 'image/png',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/favicon-civet-white/favicon-32x32.png',
+        url: 'favicon.ico',
         sizes: '32x32',
         type: 'image/png',
         media: '(prefers-color-scheme: light)',
