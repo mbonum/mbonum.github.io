@@ -1,5 +1,6 @@
 'use client'
 import { TextEffect } from '@/components/ui/text-effect'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export function Header() {
@@ -8,9 +9,16 @@ export function Header() {
       <div>
         <Link
           href="/"
-          className="text-xl font-medium text-black dark:text-white"
+          className="flex items-center text-xl font-medium text-black dark:text-white"
         >
-          Mirko Bonomi
+          <Image
+            src="/mb-gh-profile.png"
+            alt="Mirko Bonomi"
+            className="-ml-20 size-16 rounded-full object-cover align-middle"
+            width={32}
+            height={32}
+          />
+          <span className="ml-4">Mirko Bonomi</span>
         </Link>
         <TextEffect
           as="p"
