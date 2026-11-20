@@ -1,6 +1,6 @@
 # Mirko Bonomi's Personal Site
 
-Personal website built with Next.js 15, React 19, Tailwind CSS v4, and Motion.
+Personal website built with Next.js 16, React 19, Tailwind CSS v4, and Motion.
 
 Live site: [https://mgb.is-a.dev](https://mgb.is-a.dev)
 
